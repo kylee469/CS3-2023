@@ -14,15 +14,15 @@
 	}
 		
 	a	{
-    font-family: Arial;
-    text-align: center;
-    color: #054f8c ;
-	margin-left: 200px;
-    border: 2px;
-    border-style: dotted;
-    border-color: #1b95bc;
-    background-color: #adf5f2;
-    padding: 10px;
+    		font-family: Arial;
+    		text-align: center;
+    		color: #054f8c ;
+		margin-left: 200px;
+    		border: 2px;
+    		border-style: dotted;
+		border-color: #1b95bc;
+  	 	background-color: #adf5f2;
+    		padding: 10px;
 	}
 		
 	p	{

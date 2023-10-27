@@ -8,13 +8,13 @@
 	h1	{
 		color: #041a4c;
 		text-align: center;
-		font-family: Prompt;
+		font-family: Arial;
 		text-shadow: 1px 1px #054f8c;
 		margin-bottom: 500x;
 	}
 		
 	a	{
-    font-family: Prompt;
+    font-family: Arial;
     text-align: center;
     color: #054f8c ;
 	margin-left: 200px;
@@ -28,7 +28,7 @@
 	p	{
 		color: #041a4c;
 		text-align: center;
-		font-family: Prompt;
+		font-family: Arial;
 		font-size: 20px;
 		font-weight: bold;
 	}

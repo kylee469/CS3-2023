@@ -1,0 +1,97 @@
+	* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0px;
+			height: 400px;
+			background-image: url("https://pbs.twimg.com/media/E3mqA8GWYAEssPm?format=png&name=large");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		#header {
+			padding: 0px;
+			background-color: #30423d;
+		}
+
+		#logo {
+			float: left;
+			margin-left: 8px;
+			margin-right: 8px;
+			margin-top: 3px;
+		}
+	
+		#header-name {
+			font-size: 35px;
+			margin:0;
+			color: #f0c648;
+			text-shadow: 1px 1px #ec8e82;
+			font-family: "Lucida Handwriting", cursive;
+		}
+
+		.topnav {
+		background-color: #30423d;
+		overflow: hidden;
+		}
+
+
+		.topnav a:link {
+		float: right;
+		color: #f0c648;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+		}
+
+		.topnav a:visited {
+		background-color: #1a2421;
+		color: #b09135;
+		}
+
+		.topnav a:hover {
+		background-color: #ddd;
+		color: black;
+		}
+
+		.topnav a.active {
+		background-color: #04AA6D;
+		color: white;
+		}
+		
+		.rounded-image {
+		border-radius: 15%; 
+		background-color: #30423d ;
+		padding: 6px;
+		margin-left: 150px;
+		}
+		
+		.description	{
+		border-radius: 10%; 
+		background-color: #30423d ;
+		height: 550px;
+		width: 40%;
+		float: right;
+		margin-right: 200px;
+		opacity: 0.9;
+		font-family: "Lucida Handwriting", cursive;
+		font-size: 15px;
+		}
+		
+		.text	{
+		text-indent: 30px;
+		color: white;
+		text-align: justify;
+		padding: 15px;
+
+		}
+		
+
+		.title	{
+		text-align: center;
+		color: #30423d;
+		font-family: "Lucida Handwriting", cursive;
+		}
+		

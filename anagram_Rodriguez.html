@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Anagram - RODRIGUEZ</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        
+        function anagram(input1, input2) {
+		
+            const str1 = input1.replace(/\s/g, '').toLowerCase();
+            const str2 = input2.replace(/\s/g, '').toLowerCase();
+
+            if (str1.length !== str2.length) {
+                return false;
+            }
+
+
+            const sortedStr1 = str1.split('').sort().join('');
+            const sortedStr2 = str2.split('').sort().join('');
+
+          
+            return sortedStr1 === sortedStr2;
+        }
+
+
+        const word1 = prompt("Please enter the first word/phrase:");
+        const word2 = prompt("Please enter the second word/phrase:");
+
+
+        if (anagram(word1, word2)) {
+            alert(`${word1} and ${word2} are anagrams!`);
+		} 
+		
+        else {
+            alert(`${word1} and ${word2} are not anagrams.`);
+        }
+    </script>
+</body>
+</html>

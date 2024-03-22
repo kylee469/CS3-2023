@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coding Challenge 5 - RODRIGUEZ</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: lightseagreen;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Modified FLAMES</h1>
+
+        <label for="name1">Name 1:</label>
+        <input type="text" id="name1">
+		
+        <label for="name2">Name 2:</label>
+        <input type="text" id="name2">
+		
+        <button onclick="flames()">Match Names</button>
+        
+        <h3 id="name"></h3>
+
+        <h4>FLAMES Result:</h4>
+        <h3 id="result"></h3>
+
+        <script>
+            function flames() {
+                var name1 = document.getElementById("name1").value.replace(/\s+/g, ''); 
+                var name2 = document.getElementById("name2").value.replace(/\s+/g, ''); 
+                var combinedNames = (name1 + name2).toLowerCase(); 
+                var flamesWord = "flames";
+                var flamesCount = combinedNames.length % flamesWord.length; 
+                var result;
+                
+                switch (flamesWord.charAt(flamesCount)) {
+                    case 'f':
+                        result = "Friends";
+                        break;
+                    case 'l':
+                        result = "Lovers";
+                        break;
+                    case 'a':
+                        result = "Acquaintances";
+                        break;
+                    case 'm':
+                        result = "Marriage";
+                        break;
+                    case 'e':
+                        result = "Enemies";
+                        break;
+                    case 's':
+                        result = "Sweethearts";
+                        break;
+                    default:
+                        result = "Undefined";
+                        break;
+                }
+
+                document.getElementById("name").innerText = "Names: " + name1 + " & " + name2;
+                document.getElementById("result").innerText = result;
+            }
+        </script>
+    </body>
+</html>

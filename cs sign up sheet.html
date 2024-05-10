@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sign-up Sheet - RODRIGUEZ </title>
+    <style>
+        body {
+            background-image: url("https://i.pinimg.com/originals/13/e6/1f/13e61fc038237aba45ba9f709b057053.jpg");
+            background-size: 150%;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Comic Sans MS, cursive, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 7px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #ff69b4;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+            color: #4b0082;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        input.error, textarea.error, select.error {
+            border-color: #f44336; /* Red */
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+            border-color: #ff69b4; /* Pink */
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 10px;
+            font-size: 15px;
+        }
+
+        .submit {
+            background-color: #ff69b4; /* Pink */
+            color: white;
+        }
+
+        .reset {
+            background-color: #4b0082; /* Purple */
+            color: white;
+        }
+
+        #signup-info {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-style: italic;
+        }
+
+        #signup-info p {
+            margin: 7px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SIGN-UP NOW!</h1>
+        <form id="signup-form" onsubmit="return validateForm()">
+            <label for="name">What's your Name?</label>
+            <input type="text" id="name" name="name" onblur="checkInput(this)" onfocus="checkInput(this)"> <br>
+
+            <label for="username">Choose a Username:</label>
+            <input type="text" id="username" name="username" onblur="checkInput(this)" onfocus="checkInput(this)"> <br>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" onblur="checkInput(this)" onfocus="checkInput(this)">
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="prefer_not_to_mention">Preferred not to say</option>
+            </select> <br>
+
+            <label for="password">Create a Password:</label>
+            <input type="password" id="password" name="password" onblur="checkInput(this)" onfocus="checkInput(this)"> <br>
+
+            <label for="email">Your Email Address:</label>
+            <input type="email" id="email" name="email" onblur="checkInput(this)" onfocus="checkInput(this)"> <br>
+
+            <label for="address">Where are you from?</label>
+            <input type="text" id="address" name="address" onblur="checkInput(this)" onfocus="checkInput(this)"> <br>
+
+            <label for="interests">Tell us about your interests:</label>
+            <textarea id="interests" name="interests" onblur="checkInput(this)" onfocus="checkInput(this)"></textarea> <br>
+
+            <div class="buttons">
+                <button type="submit" class="submit">Sign Up!</button>
+                <button type="button" class="reset" onclick="resetForm()">Reset</button>
+            </div>
+        </form>
+        <div id="signup-info"></div>
+    </div>
+
+    <script>
+        function checkInput(input) {
+            if (input.value.trim() === '') {
+                input.classList.add('error');
+            } else {
+                input.classList.remove('error');
+                input.classList.add('success');
+            }
+        }
+
+        function validateForm() {
+            var inputs = document.getElementsByTagName('input');
+            var selects = document.getElementsByTagName('select');
+            var textareas = document.getElementsByTagName('textarea');
+
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].value.trim() === '') {
+                    inputs[i].classList.add('error');
+                    return false;
+                }
+            }
+
+            for (var j = 0; j < selects.length; j++) {
+                if (selects[j].value.trim() === '') {
+                    selects[j].classList.add('error');
+                    return false;
+                }
+            }
+
+            for (var k = 0; k < textareas.length; k++) {
+                if (textareas[k].value.trim() === '') {
+                    textareas[k].classList.add('error');
+                    return false;
+                }
+            }
+
+            var formData = document.getElementById('signup-form');
+            var infoDiv = document.getElementById('signup-info');
+            var info = "<p><strong>Full Name:</strong> " + formData.name.value + "</p>" +
+                "<p><strong>Username:</strong> " + formData.username.value + "</p>" +
+                "<p><strong>Gender:</strong> " + formData.gender.value + "</p>" +
+                "<p><strong>Password:</strong> " + formData.password.value + "</p>" +
+                "<p><strong>Email Address:</strong> " + formData.email.value + "</p>" +
+                "<p><strong>Address:</strong> " + formData.address.value + "</p>" +
+                "<p><strong>Interests:</strong> " + formData.interests.value + "</p>";
+            infoDiv.innerHTML = info;
+            infoDiv.style.display = 'block';
+
+            return false; // Prevent form submission
+        }
+
+        function resetForm() {
+            var formData = document.getElementById('signup-form');
+            var infoDiv = document.getElementById('signup-info');
+            var inputs = formData.getElementsByTagName('input');
+            var selects = formData.getElementsByTagName('select');
+            var textareas = formData.getElementsByTagName('textarea');
+
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].classList.remove('error', 'success');
+            }
+
+            for (var j = 0; j < selects.length; j++) {
+                selects[j].classList.remove('error', 'success');
+            }
+
+            for (var k = 0; k < textareas.length; k++) {
+                textareas[k].classList.remove('error', 'success');
+            }
+
+            formData.reset();
+            infoDiv.innerHTML = '';
+            infoDiv.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+
